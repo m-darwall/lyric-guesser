@@ -1,13 +1,29 @@
 body{
     font-family: Ubuntu Mono, monospace;
     background-color: black;
+    text-align: center;
 }
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
     color: white;
 }
 
+h3{
+    margin-bottom: 0;
+}
+
 div{
     text-align: center;
     color: white;
+}
+
+input{
+    padding: 10px;
+    margin: 25px 0 25px 0;
+}
+
+#guess-container{
+    background-color: black;
+    position:sticky;
+    top: 0;
 }
