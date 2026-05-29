@@ -3,6 +3,7 @@ body{
     background-color: black;
     text-align: center;
     margin: auto;
+    font-size: 20px;
 }
 
 .celebration{
@@ -29,6 +30,7 @@ input{
 }
 
 #guess-container{
+    font-size: 20px;
     background-color: black;
     position:sticky;
     top: 0;
@@ -42,6 +44,7 @@ input{
     /*left: 35%;*/
     margin-left: auto;
     margin-right: auto;
+    font-size: 20px;
 }
 
 #lyrics-container{
@@ -72,6 +75,7 @@ input{
     border-radius: 25px;
     color: white;
     background-color: black;
+    font-size: 20px;
 }
 
 #give-up{
@@ -85,6 +89,7 @@ input{
     margin: auto;
     padding: 25px;
     font-family: Ubuntu Mono, monospace;
+    font-size: 20px;
 }
 
 @keyframes color {
