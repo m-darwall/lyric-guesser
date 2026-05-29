@@ -39,7 +39,7 @@ class Song{
                 document.getElementById('progress-indicator').style.color = 'green';
                 document.getElementById('top').scrollIntoView({behavior: 'smooth', block: 'center'});
                 document.getElementById('guess-container').style.backgroundColor = 'transparent';
-                document.getElementById('progress-indicator').style.backgroundColor = 'transparent';
+                document.getElementById('stats-container').style.backgroundColor = 'transparent';
                 document.getElementById('body').classList.add('celebration');
             }
         }

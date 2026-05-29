@@ -9,6 +9,13 @@
 
 <h1 id="top">Lyric Guesser</h1>
 <h3>Type a word to guess it. All matching words in the song will then be revealed.</h3>
+<div id="popup">
+    <h3>Would you like to be timed?</h3>
+    <br>
+    <button id="start-timer">Yes</button>
+    <button id="cancel-popup">No</button>
+</div>
+
 <div id="guess-container">
     <label for="guess-box"></label>
     <input autofocus type="text" id="guess-box">
@@ -16,13 +23,54 @@
 <div id="lyrics-container"></div>
 <br>
 <button id="give-up">Give Up</button>
-<div id="progress-indicator"></div>
+<div id="stats-container">
+    <div id="timer"></div>
+    <div id="progress-indicator"></div>
+</div>
+
 <script type="text/javascript" src="songs.json"></script>
 <script type="text/javascript" src="lyric-handler.js"></script>
 <script>
+    let startTime = 0;
+    let timer = document.getElementById("timer");
+    let progress = document.getElementById("progress-indicator");
+    let timerVar = 0;
     setupSong('songs.json')
     document.getElementById('guess-box').addEventListener('input', updateGuess)
     document.getElementById('give-up').addEventListener('click', giveUp);
+    document.getElementById('cancel-popup').addEventListener('click', function(){
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('timer').style.display = 'none';
+    });
+    document.getElementById('start-timer').addEventListener('click',startTimer);
+
+    function startTimer(){
+        document.getElementById('popup').style.display = 'none';
+        startTime = Date.now();
+        timerVar = setInterval(timerUpdate, 1000);
+    }
+
+    function stopTimer(){
+        clearInterval(timerVar);
+    }
+
+    function timerUpdate(){
+        timer.innerHTML = msToTime(Date.now() - startTime);
+        console.log(progress.innerHTML)
+        if(progress.innerHTML === '100%'){
+            stopTimer();
+        }
+    }
+
+    function msToTime(s) {
+        let ms = s % 1000;
+        s = (s - ms) / 1000;
+        let secs = s % 60;
+        s = (s - secs) / 60;
+        let mins = s % 60;
+
+        return mins.toString().padStart(2, '0') + ':' + secs.toString().padStart(2, '0');
+    }
 </script>
 </body>
 </html>
