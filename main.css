@@ -15,7 +15,6 @@ h3{
 div{
     text-align: center;
     color: black;
-    user-select: none;
 }
 
 input{
@@ -27,4 +26,35 @@ input{
     background-color: black;
     position:sticky;
     top: 0;
+    z-index: 1;
+}
+
+#guess-box{
+    width: 30%;
+    border-radius: 25px;
+}
+
+#lyrics-container{
+    width: 100%;
+}
+
+.lyric{
+    user-select: none;
+    border: 1px solid yellow;
+    width: 20%;
+    position: relative;
+    left: 40%;
+    z-index: 0;
+    border-radius: 25px;
+    margin-bottom: -1px;
+}
+
+@media screen and (max-width: 600px) {
+    .lyric{
+        width: 90%;
+        left: 5%;
+    }
+    #guess-box{
+        width: 90%;
+    }
 }

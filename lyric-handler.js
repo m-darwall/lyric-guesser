@@ -2,7 +2,6 @@ let theSong = 0;
 
 class Song{
     constructor(json, elements){
-        this.json = json;
         this.title = json.title;
         this.artist = json.artist;
         this.lyrics = json.lyrics;
@@ -49,6 +48,7 @@ function displayLyrics (songData) {
     for (let i = 0; i < lyrics.length; i++) {
         let div = document.createElement("div");
         div.innerHTML = lyrics[i];
+        div.classList.add('lyric');
         divs.push(div);
         document.getElementById("lyrics-container").appendChild(div);
     }
@@ -61,7 +61,7 @@ async function setupSong (jsonPath) {
     theSong = new Song(song, divs);
 }
 
-function updateGuess(song){
+function updateGuess(){
     let guess = document.getElementById("guess-box").value;
     theSong.checkGuess(guess);
 }
