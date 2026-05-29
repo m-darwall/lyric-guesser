@@ -27,6 +27,9 @@ class Song{
             }
             for (let i = 0; i < indices.length; i++){
                 this.elements[indices[i]].style.color = 'white';
+                if (i + 1 === indices.length){
+                    this.elements[indices[i]].scrollIntoView({behavior: 'smooth'});
+                }
             }
         }
     }
