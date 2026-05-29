@@ -31,7 +31,7 @@ class Song{
                 this.elements[indices[i]].style.color = 'white';
                 this.progress++;
                 if (i + 1 === indices.length){
-                    this.elements[indices[i]].scrollIntoView({behavior: 'smooth'});
+                    this.elements[indices[i]].scrollIntoView({behavior: 'smooth', block: 'center'});
                     document.getElementById('progress-indicator').innerHTML = Math.floor((this.progress/this.totalwords)*100).toString() + "%";
                 }
             }
