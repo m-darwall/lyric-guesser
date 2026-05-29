@@ -31,7 +31,9 @@ input{
 
 #guess-box{
     width: 30%;
-    border-radius: 25px;
+    border-radius: 5px;
+    position: sticky;
+    left: 35%;
 }
 
 #lyrics-container{
@@ -45,8 +47,14 @@ input{
     position: relative;
     left: 40%;
     z-index: 0;
-    border-radius: 25px;
+    padding: 10px;
     margin-bottom: -1px;
+}
+.odd{
+    border-radius: 5px;
+}
+.even{
+    border-radius: 25px;
 }
 
 @media screen and (max-width: 600px) {
@@ -56,5 +64,6 @@ input{
     }
     #guess-box{
         width: 90%;
+        left: 5%;
     }
 }

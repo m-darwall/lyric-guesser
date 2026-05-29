@@ -49,6 +49,11 @@ function displayLyrics (songData) {
         let div = document.createElement("div");
         div.innerHTML = lyrics[i];
         div.classList.add('lyric');
+        if(i%2 === 0){
+            div.classList.add('even');
+        }else{
+            div.classList.add('odd');
+        }
         divs.push(div);
         document.getElementById("lyrics-container").appendChild(div);
     }
