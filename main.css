@@ -2,6 +2,7 @@ body{
     font-family: Ubuntu Mono, monospace;
     background-color: black;
     text-align: center;
+    margin: auto;
 }
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -33,7 +34,9 @@ input{
     width: 30%;
     border-radius: 5px;
     position: sticky;
-    left: 35%;
+    /*left: 35%;*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #lyrics-container{
@@ -45,10 +48,9 @@ input{
     border: 1px solid yellow;
     width: 20%;
     position: relative;
-    left: 40%;
     z-index: 0;
     padding: 10px;
-    margin-bottom: -1px;
+    margin: auto auto -1px;
 }
 .odd{
     border-radius: 5px;
@@ -68,23 +70,23 @@ input{
 
 #give-up{
     color: black;
-    width: 25%;
+    width: 20%;
     position: relative;
     left: 0;
     bottom: 0;
     background-color: yellow;
     border-radius: 25px;
-    margin: 20px;
+    margin: auto;
+    padding: 25px;
+    font-family: Ubuntu Mono, monospace;
 }
 
 @media screen and (max-width: 600px) {
     .lyric{
         width: 90%;
-        left: 5%;
     }
     #guess-box{
         width: 90%;
-        left: 5%;
     }
     #give-up{
         width: 90%;
