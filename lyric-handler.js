@@ -46,6 +46,7 @@ async function getSongData (jsonPath) {
 }
 
 function chooseRandomSong (songData) {
+    return songData.songs[1];
     return songData.songs[Math.floor(Math.random() * songData.songs.length)];
 }
 
