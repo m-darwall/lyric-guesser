@@ -8,6 +8,8 @@ class Song{
         this.elements = elements;
         this.guesses = [];
         this.plainlyrics = json.lyrics;
+        this.progress = 0;
+        this.totalwords = this.lyrics.length;
         for(let i = 0; i < json.lyrics.length; i++){
             this.plainlyrics[i] = this.plainlyrics[i].toLowerCase();
             this.plainlyrics[i] = this.plainlyrics[i].replace(/[.,\/#!$%^&*';:{}=\-_`~()]/g, '');
@@ -27,8 +29,10 @@ class Song{
             }
             for (let i = 0; i < indices.length; i++){
                 this.elements[indices[i]].style.color = 'white';
+                this.progress++;
                 if (i + 1 === indices.length){
                     this.elements[indices[i]].scrollIntoView({behavior: 'smooth'});
+                    document.getElementById('progress-indicator').innerHTML = Math.floor((this.progress/this.totalwords)*100).toString() + "%";
                 }
             }
         }
