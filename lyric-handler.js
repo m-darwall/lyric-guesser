@@ -35,10 +35,16 @@ class Song{
                     document.getElementById('progress-indicator').innerHTML = Math.floor((this.progress/this.totalwords)*100).toString() + "%";
                 }
             }
+            if(this.progress === this.totalwords){
+                document.getElementById('progress-indicator').style.color = 'green';
+                document.getElementById('top').scrollIntoView({behavior: 'smooth', block: 'center'});
+                document.getElementById('guess-container').style.backgroundColor = 'transparent';
+                document.getElementById('progress-indicator').style.backgroundColor = 'transparent';
+                document.getElementById('body').classList.add('celebration');
+            }
         }
     }
     reveal(){
-        console.log("Give Up!");
         for(let i = 0; i < this.elements.length; i++){
             console.log(this.elements[i].style.color);
             if(this.elements[i].style.color === 'black'){
