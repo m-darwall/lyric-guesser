@@ -12,11 +12,11 @@ class Song{
         this.totalwords = this.lyrics.length;
         for(let i = 0; i < json.lyrics.length; i++){
             this.plainlyrics[i] = this.plainlyrics[i].toLowerCase();
-            this.plainlyrics[i] = this.plainlyrics[i].replace(/[.,\/#!$%^&*';:{}=\-_`~()]/g, '');
+            this.plainlyrics[i] = this.plainlyrics[i].replace(/[.,\/#!$?%^&*';:{}=\-_`~()]/g, '');
         }
     }
     checkGuess(guess){
-        guess = guess.toLowerCase().replace(/[.,\/#!$%^&*';:{}=\-_`~()]/g, '');
+        guess = guess.toLowerCase().replace(/[.,\/#!$?%^&*';:{}=\-_`~()]/g, '');
         let result = this.plainlyrics.includes(guess);
         if(result && !this.guesses.includes(guess)){
             this.guesses.push(guess);
