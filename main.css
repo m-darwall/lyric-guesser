@@ -66,6 +66,17 @@ input{
     color: white;
 }
 
+#give-up{
+    color: black;
+    width: 25%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    background-color: yellow;
+    border-radius: 25px;
+    margin: 20px;
+}
+
 @media screen and (max-width: 600px) {
     .lyric{
         width: 90%;
@@ -74,5 +85,8 @@ input{
     #guess-box{
         width: 90%;
         left: 5%;
+    }
+    #give-up{
+        width: 90%;
     }
 }

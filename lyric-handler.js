@@ -37,6 +37,15 @@ class Song{
             }
         }
     }
+    reveal(){
+        console.log("Give Up!");
+        for(let i = 0; i < this.elements.length; i++){
+            console.log(this.elements[i].style.color);
+            if(this.elements[i].style.color === 'black'){
+                this.elements[i].style.color = 'red';
+            }
+        }
+    }
 }
 
 async function getSongData (jsonPath) {
@@ -56,6 +65,7 @@ function displayLyrics (songData) {
         let div = document.createElement("div");
         div.innerHTML = lyrics[i];
         div.classList.add('lyric');
+        div.style.color = 'black';
         if(i%2 === 0){
             div.classList.add('even');
         }else{
@@ -76,4 +86,8 @@ async function setupSong (jsonPath) {
 function updateGuess(){
     let guess = document.getElementById("guess-box").value;
     theSong.checkGuess(guess);
+}
+
+function giveUp(){
+    theSong.reveal();
 }
